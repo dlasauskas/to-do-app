@@ -1,7 +1,12 @@
+h1 {
+  color: hsla(0, 0%, 100%, 0.9);
+  font-weight: bold;
+}
 function onReady() {
   const addToDoForm = document.getElementByID('addToDoForm');
   const newToDoText = document.getElementByID('newToDoText');
   const toDoList = document.getElementByID('toDoList');
+  const deleteToDoForm = document.getElementByID('deleteToDoForm');
 
   addToDoForm.addEventListener('submit', () event => {
     event.preventDefault();
@@ -13,6 +18,9 @@ function onReady() {
 
     //create a new input
     let checkbox = document.createElement('input');
+
+    //delete checkbox
+    let checkbox = deleteToDoForm('li');
 
     //set the input's type to checkbox
     checkbox.type = "checkbox";
@@ -29,9 +37,11 @@ function onReady() {
     //empty the input
     newToDoText.value = '';
 
+    //delete option
+    deleteToDoForm.appendChild(newLi);
   });
 }
 window.onload = function () {
   alert("The window has loaded!");
   onReady();
-};
+}
