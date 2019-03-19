@@ -1,14 +1,10 @@
-h1 {
-  color: hsla(0, 0%, 100%, 0.9);
-  font-weight: bold;
-}
 function onReady() {
-  const addToDoForm = document.getElementByID('addToDoForm');
-  const newToDoText = document.getElementByID('newToDoText');
-  const toDoList = document.getElementByID('toDoList');
-  const deleteToDoForm = document.getElementByID('deleteToDoForm');
+  const addToDoForm = document.getElementById('addToDoForm');
+  const newToDoText = document.getElementById('newToDoText');
+  const toDoList = document.getElementById('toDoList');
+  const deleteToDoList = document.getElementById('deleteToDoList');
 
-  addToDoForm.addEventListener('submit', () event => {
+  addToDoForm.addEventListener('submit', ( event) => {
     event.preventDefault();
     //get the text
     let title = newToDoText.value;
@@ -19,8 +15,8 @@ function onReady() {
     //create a new input
     let checkbox = document.createElement('input');
 
-    //delete checkbox
-    let checkbox = deleteToDoForm('li');
+    //delete list item
+    let delete = document.createElement('delete');
 
     //set the input's type to checkbox
     checkbox.type = "checkbox";
@@ -38,7 +34,7 @@ function onReady() {
     newToDoText.value = '';
 
     //delete option
-    deleteToDoForm.appendChild(newLi);
+    toDoList.appendChild(newLi);
   });
 }
 window.onload = function () {
