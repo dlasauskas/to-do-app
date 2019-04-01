@@ -8,7 +8,7 @@ function onReady() {
     TODO_LIST.textContent = '';
 
     toDos.forEach(function(toDo){
-      const NEW_LI = document.getElement('li');
+      const NEW_LI = document.createElement('li');
       const CHECKBOX = document.createElement('input');
       CHECKBOX.type = "checkbox";
 
