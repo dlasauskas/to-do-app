@@ -16,10 +16,7 @@ function onReady() {
       DELETE_BTN.textContent = "Delete";
 
       DELETE_BTN.addEventListener('click', event => {
-        toDos = toDos.filter(function(item){
-          return item.id !== toDo.id;
-        })
-        renderTheUI();
+      event.target.parentNode.parentNode.removeChild(event.target.parentNode);
       });
 
       NEW_LI.textContent = toDo.title;
